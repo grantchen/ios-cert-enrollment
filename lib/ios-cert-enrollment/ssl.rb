@@ -4,7 +4,7 @@ module IOSCertEnrollment
     class << self    
       def key
         return @@key if @@key
-        return @@key = OpenSSL::PKey::RSA.new(File.read(IOSCertEnrollment.ssl_key_path))
+        return @@key = OpenSSL::PKey::RSA.new(File.read(IOSCertEnrollment.ssl_key_path), IOSCertEnrollment.ssl_key_password)
       end
     
       def certificate
