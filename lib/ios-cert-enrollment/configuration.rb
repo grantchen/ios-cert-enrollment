@@ -4,6 +4,7 @@ module IOSCertEnrollment
   # Defines constants and methods related to configuration
   module Configuration
     VALID_OPTIONS_KEYS = [
+      :ca_certificate_path,
       :ssl_certificate_path,
       :ssl_key_password,
       :ssl_key_path,
