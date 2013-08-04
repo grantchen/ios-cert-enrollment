@@ -11,7 +11,7 @@ module IOSCertEnrollment
       def registration_authority    
         scep_certs = OpenSSL::PKCS7.new()
         scep_certs.type="signed"
-        scep_certs.certificates=[SSL.certificate,SSL.certificate]
+        scep_certs.certificates=[SSL.ca_certificate, SSL.ca_certificate]
         return Certificate.new(scep_certs.to_der, "application/x-x509-ca-ra-cert")
       end
       
